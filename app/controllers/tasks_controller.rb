@@ -2,6 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
+    @tasks = Task.all
   end
 
   def create
@@ -13,6 +14,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :start_at, :finish_at)
+    params.require(:task).permit(:title, :content, :start_at, :finish_at)
   end
 end
