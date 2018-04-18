@@ -1,16 +1,18 @@
+/TODO : kindの選択をプルダウン式にする/
+
 %nav.navbar.navbar-light{style: :"background-color: #e3f2fd;" }
   %a.navbar-brand 登録済みタスク一覧
 
 = form_for @task, html: {class: 'form-group'} do |f|
 
   = f.label :kind
-  = f.text_field :kind, class: 'form-control'
+  = f.number_field :kind, class: 'form-control', placeholder: 0
 
   = f.label :title
-  = f.text_field :title, class: 'form-control'
+  = f.text_field :title, class: 'form-control', placeholder: "ここにタスク名を入力してください"
 
   = f.label :content
-  = f.text_area :content, class: 'form-control'
+  = f.text_area :content, class: 'form-control', placeholder: "ここにタスクの詳細を入力してください"
 
   = f.label :start_at
   = f.datetime_select :start_at, ampm: :true, minute_step: 15, class: 'form-control'
