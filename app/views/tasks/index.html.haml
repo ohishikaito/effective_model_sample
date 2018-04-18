@@ -3,6 +3,9 @@
 
 = form_for @task, html: {class: 'form-group'} do |f|
 
+  = f.label :kind
+  = f.text_field :kind, class: 'form-control'
+
   = f.label :title
   = f.text_field :title, class: 'form-control'
 
@@ -22,6 +25,7 @@
   %table.table.table-striped.b-t.b-light
     %thead
       %tr
+        %th 種類
         %th タスクの名前
         %th タスクの内容
         %th 開始時間
