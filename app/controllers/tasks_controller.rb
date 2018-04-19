@@ -13,13 +13,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    if @task.finished == false
-      @task.finished = true
-      @task.save
-      redirect_to tasks_path
-    else
-      render :index, alert: '既にタスク「#{task.title}」は完了しています '
-    end
+    @task.update_finished_true
   end
 
   private
