@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.where('start_at > ?', Time.zone.now).order(start_at: :asc)
+    @tasks = Task.incoming.order(start_at: :asc)
   end
 
   def create
