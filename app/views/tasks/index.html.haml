@@ -14,10 +14,10 @@
     = f.text_area :content, class: 'form-control', placeholder: "ここにタスクの詳細を入力してください"
 
     = f.label :start_at
-    = f.datetime_select :start_at, ampm: :true, minute_step: 15, class: 'form-control'
+    = f.datetime_select :start_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 1.days), class: 'form-control'
 
     = f.label :finish_at
-    = f.datetime_select :finish_at, ampm: :true, minute_step: 15, class: 'form-control'
+    = f.datetime_select :finish_at, ampm: :true, minute_step: 15, default: (Time.zone.now + 2.days), class: 'form-control'
 
     = f.submit '作成する', class: "btn btn-primary"
 
