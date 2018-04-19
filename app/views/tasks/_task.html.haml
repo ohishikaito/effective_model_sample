@@ -14,3 +14,8 @@
     = task.start_at
   %td
     = task.finish_at
+  %td
+    - if task.finished?
+      完了
+    - else
+      未完了
