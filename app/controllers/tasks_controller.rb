@@ -14,6 +14,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update_finished_true
+    redirect_to tasks_path
   end
 
   private
